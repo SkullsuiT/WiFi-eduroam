@@ -1,5 +1,5 @@
-netsh wlan delete profile name="eduroam®"
-netsh wlan delete profile name="eduroam® via partner"
+netsh wlan delete profile name="eduroam®" | Out-Null
+netsh wlan delete profile name="eduroam® via partner" | Out-Null
 
 Start-Sleep -Milliseconds 100
 

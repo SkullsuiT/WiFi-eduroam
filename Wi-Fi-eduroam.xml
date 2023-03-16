@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<WLANProfile xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
+	<name>eduroam</name>
+	<SSIDConfig>
+		<SSID>
+			<hex>656475726F616D</hex>
+			<name>eduroam</name>
+		</SSID>
+	</SSIDConfig>
+	<connectionType>ESS</connectionType>
+	<connectionMode>auto</connectionMode>
+	<autoSwitch>false</autoSwitch>
+	<MSM>
+		<security>
+			<authEncryption>
+				<authentication>WPA2</authentication>
+				<encryption>AES</encryption>
+				<useOneX>true</useOneX>
+			</authEncryption>
+			<PMKCacheMode>enabled</PMKCacheMode>
+			<PMKCacheTTL>720</PMKCacheTTL>
+			<PMKCacheSize>128</PMKCacheSize>
+			<preAuthMode>disabled</preAuthMode>
+			<OneX xmlns="http://www.microsoft.com/networking/OneX/v1">
+				<cacheUserData>true</cacheUserData>
+				<authMode>user</authMode>
+				<EAPConfig>
+					<EapHostConfig xmlns="http://www.microsoft.com/provisioning/EapHostConfig">
+						<EapMethod>
+							<Type xmlns="http://www.microsoft.com/provisioning/EapCommon">21</Type>
+							<VendorId xmlns="http://www.microsoft.com/provisioning/EapCommon">0</VendorId>
+							<VendorType xmlns="http://www.microsoft.com/provisioning/EapCommon">0</VendorType>
+							<AuthorId xmlns="http://www.microsoft.com/provisioning/EapCommon">311</AuthorId>
+						</EapMethod>
+						<Config xmlns="http://www.microsoft.com/provisioning/EapHostConfig">
+							<EapTtls xmlns="http://www.microsoft.com/provisioning/EapTtlsConnectionPropertiesV1">
+								<ServerValidation>
+									<ServerNames>eduroam.ac-nancy-metz.fr</ServerNames>
+									<TrustedRootCAHash>d1 eb 23 a4 6d 17 d6 8f d9 25 64 c2 f1 f1 60 17 64 d8 e3 49 </TrustedRootCAHash>
+									<TrustedRootCAHash>d8 9e 3b d4 3d 5d 90 9b 47 a1 89 77 aa 9d 5c e3 6c ee 18 4c </TrustedRootCAHash>
+									<TrustedRootCAHash>c2 82 6e 26 6d 74 05 d3 4e f8 97 62 63 6a e4 b3 6e 86 cb 5e </TrustedRootCAHash>
+									<DisablePrompt>true</DisablePrompt>
+								</ServerValidation>
+								<Phase2Authentication>
+									<PAPAuthentication/>
+								</Phase2Authentication>
+								<Phase1Identity>
+									<IdentityPrivacy>true</IdentityPrivacy>
+									<AnonymousIdentity>anonymous@ac-nancy-metz.fr</AnonymousIdentity>
+								</Phase1Identity>
+							</EapTtls>
+						</Config>
+					</EapHostConfig>
+				</EAPConfig>
+			</OneX>
+		</security>
+	</MSM>
+</WLANProfile>
