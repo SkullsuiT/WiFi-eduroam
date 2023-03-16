@@ -19,7 +19,7 @@ param ($force)
 $scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
 
 # Is Wi-Fi present ?
-if (Get-NetAdapter | ? {$_.InterfaceType -eq "71"}) {
+if (Get-NetAdapter | Where-Object {$_.InterfaceType -eq "71"}) {
     # Yes do we force Wi-Fi profile import ?
     if ($force) {
         if ($force -eq $true) {

@@ -1,6 +1,8 @@
 netsh wlan delete profile name="eduroam®" | Out-Null
 netsh wlan delete profile name="eduroam® via partner" | Out-Null
 
+netsh wlan show profiles eduroam | Select-String "Nom du SSID[^`"]+`"([^`"]+)`"" | ForEach-Object { $_.Matches.Groups[1].Value }
+
 Start-Sleep -Milliseconds 100
 
 $eduroam = "C:\temp\eduroam.exe"
